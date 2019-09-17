@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Tabela produktów</title>
+    <style>
+        .site {
+            margin: 15px;
+        }
+
+        th {
+            margin: 5px;
+        }
+
+        td {
+            width: 200px;
+        }
+
+        h2 {
+            color: darkblue;
+        }
+    </style>
+</head>
+<body class="site">
+<h2>Tabela produktów</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Nazwa</th>
+        <th>Cena</th>
+    </tr>
+    </thead>
+    <tr th:each="product:${productList}">
+        <td th:text="${product.name}"></td>
+        <td th:text="${product.price}"></td>
+    </tr>
+</table>
+</body>
+</html>
